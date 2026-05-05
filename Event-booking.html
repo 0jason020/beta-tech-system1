@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Booking | Beta Tech Solutions</title>
+    <style>
+        :root {
+            --primary-color: #5aca3e;
+            --glass-bg: rgba(255, 255, 255, 0.9);
+            --text-color: #1e293b;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                        url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=2069&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .form-container {
+            background: var(--glass-bg);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            max-width: 600px;
+            backdrop-filter: blur(5px);
+        }
+
+        h2 {
+            color: var(--text-color);
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 28px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #64748b;
+            margin-bottom: 30px;
+        }
+
+        fieldset {
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        legend {
+            font-weight: bold;
+            color: var(--primary-color);
+            padding: 0 10px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #334155;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="number"],
+        input[type="date"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            box-sizing: border-box; /* Important for width */
+            transition: border-color 0.3s;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        .btn-group {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        input[type="submit"] {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 14px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 16px;
+            transition: background 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #1dfd15;
+        }
+
+        input[type="reset"] {
+            background-color: #f1f5f9;
+            color: #475569;
+            border: none;
+            padding: 14px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        input[type="reset"]:hover {
+            background-color: #e2e8f0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <h2>Event Booking Form</h2>
+        <p class="subtitle">Beta Tech Solutions | Musanze District</p>
+
+        <form action="#" method="POST">
+            <fieldset>
+                <legend>Event Info</legend>
+                
+                <label for="event-title">Event Title</label>
+                <input type="text" id="event-title" name="event-title" placeholder="e.g. Annual Tech Summit" required>
+
+                <label for="event-type">Event Type</label>
+                <select id="event-type" name="event-type">
+                    <option value="corporate">Corporate Meeting</option>
+                    <option value="wedding">Wedding</option>
+                    <option value="workshop">Workshop</option>
+                    <option value="party">Social Party</option>
+                </select>
+
+                <label for="event-date">Date</label>
+                <input type="date" id="event-date" name="event-date" required>
+
+                <label for="guests">Guests</label>
+                <input type="number" id="guests" name="guests" min="1" placeholder="100" required>
+            </fieldset>
+
+            <fieldset>
+                <legend>Contact Detail</legend>
+                
+                <label for="organizer-name">Full Name</label>
+                <input type="text" id="organizer-name" name="organizer-name" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </fieldset>
+
+            <label for="special-requests">Special Requests</label>
+            <textarea id="special-requests" name="special-requests" rows="3"></textarea>
+
+            <div class="btn-group">
+                <input type="submit" value="Confirm Booking">
+                <input type="reset" value="Cancel">
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>
